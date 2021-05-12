@@ -1,0 +1,17 @@
+<div class="container">
+  {{!-- 支出項目 --}}
+  <ul class="list-group">
+    {{#each records}}
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-auto mr-auto">
+          <h4 style="display: inline; vertical-align: middle;">
+            {{ this.name }} {{this.category}} {{this.date}} {{this.amount}}
+          </h4>
+        </div>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+  <a href="./records/new">Create</a>
+</div>
