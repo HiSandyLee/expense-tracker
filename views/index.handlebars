@@ -10,8 +10,15 @@
           </h4>
         </div>
       </div>
+      <a href="./records/{{ this._id }}">detail</a>
+      <a href="/records/{{ this._id }}/edit" class="btn"><i class="fas fa-lg fa-edit"></i></a>
+      <form action="/records/{{ this._id }}/delete" method="POST" style="display: inline;">
+        <button type="submit" class="btn"><i class="fas fa-lg fa-trash-alt"></i></button>
+      </form>
     </li>
+
     {{/each}}
+
   </ul>
   <a href="./records/new">Create</a>
 </div>
