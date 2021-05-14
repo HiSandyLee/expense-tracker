@@ -1,24 +1,60 @@
-<div class="container">
+<div class="container d-flex flex-column justify-content-center ">
   {{!-- 支出項目 --}}
+  <div class="d-flex justify-content-between">
+    <div class="col-sm-2">
+      <h2>總金額</h2>
+    </div>
+    <div class="col-sm-3">
+      <h1>{{totalAmount}}</h1>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-light dropdown-toggle mb-2" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        類別
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">家居物業</a>
+        <a class="dropdown-item" href="#">交通出行</a>
+        <a class="dropdown-item" href="#">休閒娛樂</a>
+        <a class="dropdown-item" href="#">餐飲食品</a>
+        <a class="dropdown-item" href="#">其他</a>
+      </div>
+    </div>
+  </div>
+
+
+
+
   <ul class="list-group">
     {{#each records}}
-    <li class="list-group-item">
-      <div class="row">
-        <div class="col-auto mr-auto">
-          <h4 style="display: inline; vertical-align: middle;">
-            {{ this.name }} {{this.category}} {{this.date}} {{this.amount}}
-          </h4>
-        </div>
-      </div>
-      <a href="./records/{{ this._id }}">detail</a>
-      <a href="/records/{{ this._id }}/edit" class="btn"><i class="fas fa-lg fa-edit"></i></a>
-      <form action="/records/{{ this._id }}/delete" method="POST" style="display: inline;">
-        <button type="submit" class="btn"><i class="fas fa-lg fa-trash-alt"></i></button>
-      </form>
-    </li>
+    <li class="list-group-item d-flex row justify-content-between align-items-center mt-1">
+      <div class="col-sm-2 d-flex flex-column justify-content-center">
+        <h2 class="item-name">{{ this.name }}</h2>
 
+      </div>
+      <div class=" col-sm-2 d-flex flex-column justify-content-center">
+        <h3 class="item-date">{{ this.date }}</h3>
+      </div>
+      <div class="col-sm-3 d-flex flex-column justify-content-center">
+        <h2 class="item-category"><i class="{{this.icon}} fa-3x"></i></h2>
+      </div>
+      <div class="individual-amount d-flex justify-content-end">
+        <h2 class="item-amount">{{ this.amount }}</h2>
+      </div>
+      <div class="col-sm-1 d-flex justify-content-end ">
+        <a href="/records/{{ this._id }}/edit" class="btn"><i class="fas fa-lg fa-edit"></i></a>
+        <form action="/records/{{ this._id }}?_method=DELETE" method="POST" style="display: inline;">
+          <button type="submit" class="btn"><i class="fas fa-lg fa-trash-alt"></i></button>
+        </form>
+      </div>
+
+
+
+    </li>
     {{/each}}
 
   </ul>
-  <a href="./records/new">Create</a>
+  <div class=" mt-3 text-center">
+    <a class="btn-lg btn-info " href="./records/new" id="add btn">新增項目</a>
+  </div>
 </div>
