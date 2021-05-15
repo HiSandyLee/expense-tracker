@@ -19,7 +19,7 @@ const recordSchema = new Schema({
   },
   totalAmount: {
     type: String
-  }
+  },
 })
 
 module.exports = mongoose.model('Record', recordSchema)

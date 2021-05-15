@@ -2,37 +2,37 @@
   "results": [
     {
       "name": "加油",
-      "category": "交通出行 ",
+      "category": "traffic",
       "date": "2020.02.02",
       "amount": 150
     },
     {
       "name": "早餐",
-      "category": "餐飲食品",
+      "category": "food",
       "date": "2020.03.15",
       "amount": 100
     },
     {
       "name": "電影",
-      "category": "休閒娛樂",
+      "category": "entertainment",
       "date": "2021.03.15",
       "amount": 150
     },
     {
       "name": "耳機",
-      "category": "其他 ",
+      "category": "other",
       "date": "2020.04.05",
       "amount": 200
     },
     {
       "name": "診所",
-      "category": "其他 ",
+      "category": "other",
       "date": "2020.05.20",
       "amount": 150
     },
     {
       "name": "電費",
-      "category": "家居物業",
+      "category": "home",
       "date": "2020.07.02",
       "amount": 2000
     }

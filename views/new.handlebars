@@ -7,14 +7,23 @@
       <input type="text" placeholder="請輸入項目名稱" name="name" class="form-control" required>
     </div>
   </div>
-  <div class="form-group form-row">
+
+  <div class="form-group row no-gutters align-items-center">
     <label for="category" class="col-md-2 col-form-label">
       支出類別
     </label>
     <div class="col-md-10">
-      <input type="text" placeholder="請輸入項目類別" name="category" class="form-control" required>
+      <select class="form-control" required name="category" id="category" required>
+        <option selected>請選擇類別</option>
+        <option value="home">家居物業</option>
+        <option value="traffic">交通出行</option>
+        <option value="entertainment">休閒娛樂</option>
+        <option value="food">餐飲食品</option>
+        <option value="other">其他</option>
+      </select>
     </div>
   </div>
+
   <div class="form-group form-row">
     <label for="date" class="col-md-2 col-form-label">
       支出日期
