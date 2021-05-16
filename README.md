@@ -1,7 +1,7 @@
 # 老爸的私房錢
 
 # 專案畫面
-![image]()
+![image](https://github.com/HiSandyLee/expense-tracker/blob/master/Expense%20Tracker.JPG)
 
 
 ## 環境建置與需求
