@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const Record = require('../../models/record')
-// const Category = require('../../models/category')
+const Category = require('../../category.json')
+const record = require('../../models/record')
 
 //create page
 router.get('/new', (req, res) => {
@@ -10,7 +11,6 @@ router.get('/new', (req, res) => {
 
 router.post('/', (req, res) => {
   const { name, category, date, amount, icon } = req.body
-  console.log(req.body)
   return Record.create(req.body)
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
@@ -50,17 +50,22 @@ router.delete('/:id', (req, res) => {
 })
 
 //filter
-router.get('/', (req, res) => {
-  const filter = req.query.filter
-  console.log(req.query.filter)
-  Record.find({ category: filter })
+router.get('/filter', (req, res) => {
+  const { category } = req.query
+  const categoryList = Category[category].name
+  console.log(categoryList)
+  console.log(category)
+  return Record.find({ category })
+    .sort({ _id: "asc" })
     .lean()
-    .then(records => {
+    .then((records) => {
+      console.log(records)
       let totalAmount = 0
-      records.forEach(record => {
+      records.forEach((record) => {
+        record.icon = Category[record.category].icon
         totalAmount += record.amount
       })
-      res.render('index', { records, totalAmount, categoryList })
+      res.render('index', { records, totalAmount, category, categoryList })
     })
     .catch(error => console.log(error))
 })

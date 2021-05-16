@@ -1,44 +1,48 @@
-<form action="/records" method="POST">
-  <div class="form-group form-row">
-    <label for="name" class="col-md-2 col-form-label">
-      支出項目
-    </label>
-    <div class="col-md-10">
-      <input type="text" placeholder="請輸入項目名稱" name="name" class="form-control" required>
+<div class="col-6 justify-content-center  mt-3 mx-auto">
+  <form action="/records" method="POST">
+    <div class="form-group form-row">
+      <label for="name" class="col-md-2 col-form-label">
+        支出項目
+      </label>
+      <div class="col-md-10">
+        <input type="text" placeholder="請輸入項目名稱" name="name" class="form-control" required>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group row no-gutters align-items-center">
-    <label for="category" class="col-md-2 col-form-label">
-      支出類別
-    </label>
-    <div class="col-md-10">
-      <select class="form-control" required name="category" id="category" required>
-        <option selected>請選擇類別</option>
-        <option value="home">家居物業</option>
-        <option value="traffic">交通出行</option>
-        <option value="entertainment">休閒娛樂</option>
-        <option value="food">餐飲食品</option>
-        <option value="other">其他</option>
-      </select>
+    <div class="form-group row no-gutters align-items-center">
+      <label for="category" class="col-md-2 col-form-label">
+        支出類別
+      </label>
+      <div class="col-md-10">
+        <select class="form-control text-muted" required name="category" id="category" required>
+          <option selected>請選擇類別</option>
+          <option value="home">家居物業</option>
+          <option value="traffic">交通出行</option>
+          <option value="entertainment">休閒娛樂</option>
+          <option value="food">餐飲食品</option>
+          <option value="other">其他</option>
+        </select>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group form-row">
-    <label for="date" class="col-md-2 col-form-label">
-      支出日期
-    </label>
-    <div class="col-md-10">
-      <input type="text" placeholder="請輸入日期" name="date" class="form-control" required>
+    <div class="form-group form-row">
+      <label for="date" class="col-md-2 col-form-label">
+        支出日期
+      </label>
+      <div class="col-md-10">
+        <input type="text" placeholder="請輸入日期" name="date" class="form-control" required>
+      </div>
     </div>
-  </div>
-  <div class="form-group form-row">
-    <label for="amount" class="col-md-2 col-form-label">
-      支出金額
-    </label>
-    <div class="col-md-10">
-      <input type="text" placeholder="請輸入項目金額" name="amount" class="form-control" required>
+    <div class="form-group form-row">
+      <label for="amount" class="col-md-2 col-form-label">
+        支出金額
+      </label>
+      <div class="col-md-10">
+        <input type="text" placeholder="請輸入項目金額" name="amount" class="form-control" required>
+      </div>
     </div>
-  </div>
-  <button type="submit">Create</button>
-</form>
+    <div class=" mt-3 text-center">
+      <button class="btn-lg btn-info " type="submit" id="add btn">Create</button>
+    </div>
+  </form>
+</div>

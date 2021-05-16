@@ -1,19 +1,19 @@
 {
   "home": {
     "name": "家居物業",
-    "icon": "fas fa-home"
+    "icon": "fas fa-home text-success"
   },
   "traffic": {
     "name": "交通出行",
-    "icon": "fas fa-shuttle-van"
+    "icon": "fas fa-shuttle-van text-info"
   },
   "entertainment": {
     "name": "休閒娛樂",
-    "icon": "fas fa-grin-beam"
+    "icon": "fas fa-grin-beam text-warning"
   },
   "food": {
     "name": "餐飲食品",
-    "icon": "fas fa-utensils"
+    "icon": "fas fa-utensils text-danger"
   },
   "other": {
     "name": "其他",

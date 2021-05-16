@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const Record = require('../../models/record')
-// const categoryList = require('../../category.json')
 const Category = require('../../category.json')
 
 router.get('/', (req, res) => {
