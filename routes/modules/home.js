@@ -10,11 +10,12 @@ router.get('/', (req, res) => {
     .sort({ _id: 'asc' })
     .then(records => {
       let totalAmount = 0
+      console.log(records)
       records.forEach(record => {
         record.icon = Category[record.category].icon
         totalAmount += record.amount
+        console.log(record.category)
       })
-      console.log(records)
       res.render('index', { records, totalAmount })
     })
     .catch(error => console.log(error))
