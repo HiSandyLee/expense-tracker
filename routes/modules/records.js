@@ -19,11 +19,31 @@ router.post('/', (req, res) => {
 //edit page
 router.get('/:id/edit', (req, res) => {
   const id = req.params.id
+  let home = false
+  let traffic = false
+  let entertainment = false
+  let food = false
+  let other = false
   return Record.findById(id)
     .lean()
-    .then((record) => res.render('edit', { record }))
-    .catch(error => console.log(error))
+    .then(record => {
+      if (record.category === 'home') {
+        home = true
+      } else if (record.category === 'traffic') {
+        traffic = true
+      } else if (record.category === 'entertainment') {
+        entertainment = true
+      } else if (record.category === 'food') {
+        food = true
+      } else if (record.category === 'other') {
+        other = true
+      }
+      res.render('edit', {
+        record, home, traffic, entertainment, food, other
+      })
+    }).catch(error => console.log(error))
 })
+
 
 router.put('/:id', (req, res) => {
   const id = req.params.id
